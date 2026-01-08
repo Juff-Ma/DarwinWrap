@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="DarwinWrap.Runtime/DarwinWrap.Runtime.csproj" Id="e67f3cb1-a490-454b-a706-d9696317253c" />
+  <Project Path="DarwinWrap/DarwinWrap.csproj" />
+</Solution>
