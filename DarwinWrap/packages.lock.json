@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "dependencies": {
+    ".NETFramework,Version=v4.8": {
+      "darwinwrap.runtime": {
+        "type": "Project",
+        "dependencies": {
+          "DarwinWrap.Shared": "[1.0.0, )"
+        }
+      },
+      "darwinwrap.shared": {
+        "type": "Project"
+      },
+      "darwinwrap.ui": {
+        "type": "Project",
+        "dependencies": {
+          "DarwinWrap.Shared": "[1.0.0, )"
+        }
+      }
+    },
+    ".NETFramework,Version=v4.8/win-x86": {}
+  }
+}

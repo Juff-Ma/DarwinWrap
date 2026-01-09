@@ -15,4 +15,39 @@
 	<ProjectReference Include="..\DarwinWrap.UI\DarwinWrap.UI.csproj" />
   </ItemGroup>
 
+	<!--Build Info-->
+	<PropertyGroup>
+		<RootNamespace>DarwinWrap</RootNamespace>
+		<Title>$(RootNamespace)</Title>
+		<AssemblyName>$(RootNamespace)</AssemblyName>
+		<Authors>Julian Rossbach</Authors>
+		<Description>Simple but powerful app for converting almost anything to MSI</Description>
+		<Copyright>Copyright (C) $([System.DateTime]::Now.Year.ToString()) $(Authors)</Copyright>
+	</PropertyGroup>
+
+	<!--MinVer and CI config-->
+	<PropertyGroup>
+		<MinVerTagPrefix>v</MinVerTagPrefix>
+		<MinVerMinimumMajorMinor>1.0</MinVerMinimumMajorMinor>
+		<MinVerDefaultPreReleaseIdentifiers>dev.0</MinVerDefaultPreReleaseIdentifiers>
+
+		<RestorePackagesWithLockFile>true</RestorePackagesWithLockFile>
+		<DisableImplicitNuGetFallbackFolder>true</DisableImplicitNuGetFallbackFolder>
+		<ContinuousIntegrationBuild Condition="'$(GITHUB_ACTIONS)' == 'true'">true</ContinuousIntegrationBuild>
+		<RestoreLockedMode Condition="'$(ContinuousIntegrationBuild)' == 'true'">true</RestoreLockedMode>
+		<Deterministic Condition="'$(ContinuousIntegrationBuild)' == 'true'">true</Deterministic>
+	</PropertyGroup>
+	<Target Name="CustomVersioning" AfterTargets="MinVer">
+		<PropertyGroup>
+			<AssemblyVersion>$(MinVerMajor).$(MinVerMinor).0.0</AssemblyVersion>
+
+			<!-- Use the highest possible revision number so debug releases or manual releases are always regarded as higher -->
+			<DefaultRevisionNumber>65535</DefaultRevisionNumber>
+			<FileVersion Condition="'$(Configuration)'=='Debug'">$(MinVerMajor).$(MinVerMinor).$(MinVerPatch).$(DefaultRevisionNumber)</FileVersion>
+
+			<GITHUB_RUN_NUMBER Condition="'$(GITHUB_RUN_NUMBER)' == ''">$(DefaultRevisionNumber)</GITHUB_RUN_NUMBER>
+			<FileVersion Condition="'$(Configuration)'=='Release'">$(MinVerMajor).$(MinVerMinor).$(MinVerPatch).$(GITHUB_RUN_NUMBER)</FileVersion>
+		</PropertyGroup>
+	</Target>
+
 </Project>
