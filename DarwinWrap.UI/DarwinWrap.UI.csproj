@@ -7,6 +7,9 @@
 		<LangVersion>14</LangVersion>
 
 		<UseWindowsForms>true</UseWindowsForms>
+
+		<PlatformTarget>AnyCPU</PlatformTarget>
+		<PreferNativeArm64>True</PreferNativeArm64>
 	</PropertyGroup>
 
 	<ItemGroup>

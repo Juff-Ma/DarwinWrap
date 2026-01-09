@@ -29,7 +29,6 @@
           "DarwinWrap.Shared": "[1.0.0, )"
         }
       }
-    },
-    ".NETFramework,Version=v4.8/win-x86": {}
+    }
   }
 }
