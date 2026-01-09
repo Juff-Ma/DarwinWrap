@@ -13,6 +13,17 @@
 		<ProjectReference Include="..\DarwinWrap.Shared\DarwinWrap.Shared.csproj" />
 	</ItemGroup>
 
+	<ItemGroup>
+		<PackageReference Include="MinVer" Version="7.0.0">
+			<PrivateAssets>all</PrivateAssets>
+			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+		</PackageReference>
+		<PackageReference Include="PolySharp" Version="1.15.0">
+			<PrivateAssets>all</PrivateAssets>
+			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+		</PackageReference>
+	</ItemGroup>
+
 	<!--Build Info-->
 	<PropertyGroup>
 		<RootNamespace>DarwinWrap.UI</RootNamespace>
