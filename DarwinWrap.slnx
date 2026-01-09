@@ -1,4 +1,6 @@
 <Solution>
   <Project Path="DarwinWrap.Runtime/DarwinWrap.Runtime.csproj" Id="e67f3cb1-a490-454b-a706-d9696317253c" />
+  <Project Path="DarwinWrap.Shared/DarwinWrap.Shared.csproj" Id="5a4d40c2-5be1-4318-87a1-9fd27f402cde" />
+  <Project Path="DarwinWrap.UI/DarwinWrap.UI.csproj" Id="beabfd72-67a1-454c-901c-547559a5f284" />
   <Project Path="DarwinWrap/DarwinWrap.csproj" />
 </Solution>

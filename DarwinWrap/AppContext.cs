@@ -1,4 +1,5 @@
 ﻿using System.Runtime.InteropServices;
+using DarwinWrap.UI.Forms;
 
 namespace DarwinWrap;
 
@@ -16,16 +17,15 @@ internal sealed class AppContext : ApplicationContext
         }
 
         //TODO: process args
-        //TODO: show actual main window
         //TODO: literally everything
-        Form mainForm = new();
+        MainForm = new WizardForm();
         if (_consoleWindow is not null)
         {
-            mainForm.Show(_consoleWindow); 
+            MainForm.Show(_consoleWindow);
             return;
         }
         
-        mainForm.Show();
+        MainForm.Show();
     }
 
     /// <summary>

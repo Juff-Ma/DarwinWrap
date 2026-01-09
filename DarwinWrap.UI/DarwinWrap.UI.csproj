@@ -1,7 +1,6 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
 	<PropertyGroup>
-		<OutputType>Exe</OutputType>
 		<TargetFramework>net48</TargetFramework>
 		<ImplicitUsings>enable</ImplicitUsings>
 		<Nullable>enable</Nullable>
@@ -10,9 +9,8 @@
 		<UseWindowsForms>true</UseWindowsForms>
 	</PropertyGroup>
 
-  <ItemGroup>
-	<ProjectReference Include="..\DarwinWrap.Runtime\DarwinWrap.Runtime.csproj" />
-	<ProjectReference Include="..\DarwinWrap.UI\DarwinWrap.UI.csproj" />
-  </ItemGroup>
+	<ItemGroup>
+		<ProjectReference Include="..\DarwinWrap.Shared\DarwinWrap.Shared.csproj" />
+	</ItemGroup>
 
 </Project>
