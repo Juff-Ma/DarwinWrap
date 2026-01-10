@@ -1,9 +1,25 @@
-﻿namespace DarwinWrap.UI.Forms;
+﻿using DarwinWrap.Shared;
+
+namespace DarwinWrap.UI.Forms;
 
 public partial class WizardForm : Form
 {
-    public WizardForm()
+    private readonly IAppController _appController;
+
+    public WizardForm(IAppController controller)
     {
+        _appController = controller;
+        
         InitializeComponent();
+    }
+
+    private void menuFileExit_Click(object sender, EventArgs e)
+    {
+        _appController.ExitApp();
+    }
+
+    private void menuHelpAbout_Click(object sender, EventArgs e)
+    {
+
     }
 }

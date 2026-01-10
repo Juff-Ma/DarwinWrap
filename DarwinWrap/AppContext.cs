@@ -1,13 +1,14 @@
 ﻿using System.Runtime.InteropServices;
+using DarwinWrap.Shared;
 using DarwinWrap.UI.Forms;
 
 namespace DarwinWrap;
 
-internal sealed class AppContext : ApplicationContext
+internal sealed class AppContext : ApplicationContext, IAppController
 {
     private readonly NativeWindow? _consoleWindow;
 
-    public AppContext(string[] args)
+    private AppContext(string[] args)
     {
         nint consoleHandle = GetConsoleWindow();
         if (consoleHandle != IntPtr.Zero)
@@ -18,14 +19,15 @@ internal sealed class AppContext : ApplicationContext
 
         //TODO: process args
         //TODO: literally everything
-        MainForm = new WizardForm();
-        if (_consoleWindow is not null)
+        MainForm = new WizardForm(this);
+        try
         {
-            MainForm.Show(_consoleWindow);
-            return;
+            MainForm.Show(_consoleWindow ?? throw new NullReferenceException());
         }
-        
-        MainForm.Show();
+        catch
+        {
+            MainForm.Show();
+        }
     }
 
     /// <summary>
@@ -33,4 +35,15 @@ internal sealed class AppContext : ApplicationContext
     /// </summary>
     [DllImport("kernel32.dll")]
     private static extern nint GetConsoleWindow();
+
+    public void ExitApp()
+    {
+        Application.Exit();
+    }
+
+    public static int StartApp(string[] args)
+    {
+        Application.Run(new AppContext(args));
+        return 0;
+    }
 }
