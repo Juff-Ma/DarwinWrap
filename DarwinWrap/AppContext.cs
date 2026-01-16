@@ -1,4 +1,5 @@
-﻿using System.Runtime.InteropServices;
+﻿using System.Reflection;
+using System.Runtime.InteropServices;
 using DarwinWrap.Shared;
 using DarwinWrap.UI.Forms;
 
@@ -43,7 +44,13 @@ internal sealed class AppContext : ApplicationContext, IAppController
 
     public static int StartApp(string[] args)
     {
+        Application.EnableVisualStyles();
         Application.Run(new AppContext(args));
         return 0;
+    }
+
+    public Assembly GetMainAssembly()
+    {
+        return Assembly.GetExecutingAssembly();
     }
 }

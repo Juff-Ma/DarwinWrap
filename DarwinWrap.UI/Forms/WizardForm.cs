@@ -22,6 +22,7 @@ public partial class WizardForm : Form
 
     private void menuHelpAbout_Click(object sender, EventArgs e)
     {
-
+        AboutForm aboutForm = new(_appController.GetMainAssembly());
+        aboutForm.ShowDialog(this);
     }
 }
