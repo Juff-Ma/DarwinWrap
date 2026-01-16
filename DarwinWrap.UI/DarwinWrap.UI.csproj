@@ -10,6 +10,8 @@
 
 		<PlatformTarget>AnyCPU</PlatformTarget>
 		<PreferNativeArm64>True</PreferNativeArm64>
+
+		<GenerateResourceUsePreserializedResources Condition="'$(Configuration)'=='Release'">true</GenerateResourceUsePreserializedResources>
 	</PropertyGroup>
 
 	<ItemGroup>
@@ -25,6 +27,7 @@
 			<PrivateAssets>all</PrivateAssets>
 			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
 		</PackageReference>
+		<PackageReference Include="System.Resources.Extensions" Version="10.0.2" />
 	</ItemGroup>
 
 	<ItemGroup>
