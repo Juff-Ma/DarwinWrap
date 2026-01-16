@@ -11,6 +11,8 @@ public partial class WizardForm : Form
         _appController = controller;
         
         InitializeComponent();
+
+        Icon = SharedResources.MainIcon;
     }
 
     private void menuFileExit_Click(object sender, EventArgs e)

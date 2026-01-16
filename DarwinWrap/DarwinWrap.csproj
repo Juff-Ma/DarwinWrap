@@ -12,6 +12,8 @@
 		<StartupObject>DarwinWrap.Entrypoint</StartupObject>
 		<PlatformTarget>AnyCPU</PlatformTarget>
 		<PreferNativeArm64>True</PreferNativeArm64>
+
+		<ApplicationIcon>..\Assets\DarwinWrap.ico</ApplicationIcon>
 	</PropertyGroup>
 
   <ItemGroup>
