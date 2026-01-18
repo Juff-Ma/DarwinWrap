@@ -74,7 +74,7 @@
             this.labelProductName.Name = "labelProductName";
             this.labelProductName.Size = new System.Drawing.Size(271, 17);
             this.labelProductName.TabIndex = 19;
-            this.labelProductName.Text = "Produktname";
+            this.labelProductName.Text = "Product Name";
             this.labelProductName.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // labelVersion
@@ -110,7 +110,7 @@
             this.labelCompanyName.Name = "labelCompanyName";
             this.labelCompanyName.Size = new System.Drawing.Size(271, 17);
             this.labelCompanyName.TabIndex = 22;
-            this.labelCompanyName.Text = "Firmenname";
+            this.labelCompanyName.Text = "Publisher";
             this.labelCompanyName.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // textBoxDescription
@@ -125,7 +125,7 @@
             this.textBoxDescription.Size = new System.Drawing.Size(271, 126);
             this.textBoxDescription.TabIndex = 23;
             this.textBoxDescription.TabStop = false;
-            this.textBoxDescription.Text = "Beschreibung";
+            this.textBoxDescription.Text = "Description";
             // 
             // okButton
             // 
@@ -139,7 +139,7 @@
             // 
             // pictureBox
             // 
-            this.pictureBox.Image = global::DarwinWrap.UI.SharedResources.DarwinWrap_Medium;
+            this.pictureBox.Image = global::DarwinWrap.UI.SharedResources.DarwinWrapImage;
             this.pictureBox.Location = new System.Drawing.Point(3, 55);
             this.pictureBox.Name = "pictureBox";
             this.tableLayoutPanel.SetRowSpan(this.pictureBox, 4);
