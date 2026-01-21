@@ -39,6 +39,9 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <EmbeddedResource Update="Pages\StartPage.resx">
+	    <Generator></Generator>
+	  </EmbeddedResource>
 	  <EmbeddedResource Update="SharedResources.resx">
 	    <Generator>PublicResXFileCodeGenerator</Generator>
 	    <LastGenOutput>SharedResources.Designer.cs</LastGenOutput>

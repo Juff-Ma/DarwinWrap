@@ -13,6 +13,20 @@
     <File Path="Assets/DarwinWrap.ico" />
     <File Path="Assets/DarwinWrap.svg" />
   </Folder>
+  <Folder Name="/Assets/ButtonIcons/">
+    <File Path="Assets/ButtonIcons/cert.png" />
+    <File Path="Assets/ButtonIcons/cert.svg" />
+    <File Path="Assets/ButtonIcons/folder.png" />
+    <File Path="Assets/ButtonIcons/folder.svg" />
+    <File Path="Assets/ButtonIcons/package.png" />
+    <File Path="Assets/ButtonIcons/package.svg" />
+    <File Path="Assets/ButtonIcons/registry.png" />
+    <File Path="Assets/ButtonIcons/registry.svg" />
+    <File Path="Assets/ButtonIcons/script.png" />
+    <File Path="Assets/ButtonIcons/script.svg" />
+    <File Path="Assets/ButtonIcons/setup.png" />
+    <File Path="Assets/ButtonIcons/setup.svg" />
+  </Folder>
   <Project Path="DarwinWrap.Runtime/DarwinWrap.Runtime.csproj" Id="e67f3cb1-a490-454b-a706-d9696317253c" />
   <Project Path="DarwinWrap.Shared/DarwinWrap.Shared.csproj" Id="5a4d40c2-5be1-4318-87a1-9fd27f402cde" />
   <Project Path="DarwinWrap.UI/DarwinWrap.UI.csproj" Id="beabfd72-67a1-454c-901c-547559a5f284" />

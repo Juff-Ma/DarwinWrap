@@ -28,6 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(StartPage));
             this.tableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
             this.zipButton = new System.Windows.Forms.Button();
             this.setupButton = new System.Windows.Forms.Button();
@@ -36,6 +38,7 @@
             this.registryButton = new System.Windows.Forms.Button();
             this.certButton = new System.Windows.Forms.Button();
             this.mainLabel = new System.Windows.Forms.Label();
+            this.toolTip = new System.Windows.Forms.ToolTip(this.components);
             this.tableLayoutPanel.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -70,6 +73,8 @@
             // 
             // zipButton
             // 
+            this.zipButton.AccessibleDescription = "Package any files you want. Includes premade configs for common apps.";
+            this.zipButton.Image = ((System.Drawing.Image)(resources.GetObject("zipButton.Image")));
             this.zipButton.Location = new System.Drawing.Point(82, 93);
             this.zipButton.Name = "zipButton";
             this.zipButton.Size = new System.Drawing.Size(75, 75);
@@ -80,6 +85,8 @@
             // 
             // setupButton
             // 
+            this.setupButton.AccessibleDescription = "Package a common setup.exe.";
+            this.setupButton.Image = ((System.Drawing.Image)(resources.GetObject("setupButton.Image")));
             this.setupButton.Location = new System.Drawing.Point(216, 93);
             this.setupButton.Name = "setupButton";
             this.setupButton.Size = new System.Drawing.Size(75, 75);
@@ -90,16 +97,20 @@
             // 
             // packageButton
             // 
+            this.packageButton.AccessibleDescription = "Package a Windows app package. E.g. Appx, Msix, AppInstaller";
+            this.packageButton.Image = ((System.Drawing.Image)(resources.GetObject("packageButton.Image")));
             this.packageButton.Location = new System.Drawing.Point(350, 93);
             this.packageButton.Name = "packageButton";
             this.packageButton.Size = new System.Drawing.Size(75, 75);
             this.packageButton.TabIndex = 2;
-            this.packageButton.Text = "App Package";
+            this.packageButton.Text = "Package";
             this.packageButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.packageButton.UseVisualStyleBackColor = true;
             // 
             // scriptButton
             // 
+            this.scriptButton.AccessibleDescription = "Package Batch/Powershell scripts.";
+            this.scriptButton.Image = ((System.Drawing.Image)(resources.GetObject("scriptButton.Image")));
             this.scriptButton.Location = new System.Drawing.Point(82, 244);
             this.scriptButton.Name = "scriptButton";
             this.scriptButton.Size = new System.Drawing.Size(75, 75);
@@ -110,6 +121,8 @@
             // 
             // registryButton
             // 
+            this.registryButton.AccessibleDescription = "Package a registry file to be applied to the target.";
+            this.registryButton.Image = ((System.Drawing.Image)(resources.GetObject("registryButton.Image")));
             this.registryButton.Location = new System.Drawing.Point(216, 244);
             this.registryButton.Name = "registryButton";
             this.registryButton.Size = new System.Drawing.Size(75, 75);
@@ -120,6 +133,8 @@
             // 
             // certButton
             // 
+            this.certButton.AccessibleDescription = "Package a certificate to be enrolled.";
+            this.certButton.Image = ((System.Drawing.Image)(resources.GetObject("certButton.Image")));
             this.certButton.Location = new System.Drawing.Point(350, 244);
             this.certButton.Name = "certButton";
             this.certButton.Size = new System.Drawing.Size(75, 75);
@@ -156,12 +171,13 @@
         #endregion
 
         private TableLayoutPanel tableLayoutPanel;
-        private Button zipButton;
-        private Button setupButton;
-        private Button packageButton;
-        private Button scriptButton;
-        private Button registryButton;
-        private Button certButton;
         private Label mainLabel;
+        private ToolTip toolTip;
+        internal Button zipButton;
+        internal Button setupButton;
+        internal Button packageButton;
+        internal Button scriptButton;
+        internal Button registryButton;
+        internal Button certButton;
     }
 }
