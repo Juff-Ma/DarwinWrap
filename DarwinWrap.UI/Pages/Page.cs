@@ -8,13 +8,12 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace DarwinWrap.UI.Pages
+namespace DarwinWrap.UI.Pages;
+
+public partial class Page : UserControl
 {
-    public partial class Page : UserControl
+    public Page()
     {
-        public Page()
-        {
-            InitializeComponent();
-        }
+        InitializeComponent();
     }
 }

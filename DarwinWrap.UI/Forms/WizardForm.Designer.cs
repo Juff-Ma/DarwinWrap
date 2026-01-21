@@ -110,17 +110,16 @@
             this.backButton.TabIndex = 6;
             this.backButton.Text = "< &Back";
             this.backButton.UseVisualStyleBackColor = true;
-            this.backButton.Visible = false;
             // 
             // nextButton
             // 
+            this.nextButton.Enabled = false;
             this.nextButton.Location = new System.Drawing.Point(438, 416);
             this.nextButton.Name = "nextButton";
             this.nextButton.Size = new System.Drawing.Size(75, 23);
             this.nextButton.TabIndex = 7;
             this.nextButton.Text = "&Next >";
             this.nextButton.UseVisualStyleBackColor = true;
-            this.nextButton.Visible = false;
             // 
             // mainPanel
             // 
@@ -147,6 +146,7 @@
             this.Name = "WizardForm";
             this.Padding = new System.Windows.Forms.Padding(9);
             this.Text = "DarwinWrap";
+            this.Load += new System.EventHandler(this.WizardForm_Load);
             this.tableLayoutPanel.ResumeLayout(false);
             this.ResumeLayout(false);
 
