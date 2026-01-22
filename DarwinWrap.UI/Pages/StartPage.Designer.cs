@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(StartPage));
             this.tableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
             this.zipButton = new System.Windows.Forms.Button();
             this.setupButton = new System.Windows.Forms.Button();
@@ -74,7 +73,7 @@
             // zipButton
             // 
             this.zipButton.AccessibleDescription = "Package any files you want. Includes premade configs for common apps.";
-            this.zipButton.Image = ((System.Drawing.Image)(resources.GetObject("zipButton.Image")));
+            this.zipButton.Image = global::DarwinWrap.UI.SharedResources.FolderButtonImage;
             this.zipButton.Location = new System.Drawing.Point(82, 93);
             this.zipButton.Name = "zipButton";
             this.zipButton.Size = new System.Drawing.Size(75, 75);
@@ -86,7 +85,7 @@
             // setupButton
             // 
             this.setupButton.AccessibleDescription = "Package a common setup.exe.";
-            this.setupButton.Image = ((System.Drawing.Image)(resources.GetObject("setupButton.Image")));
+            this.setupButton.Image = global::DarwinWrap.UI.SharedResources.SetupButtonImage;
             this.setupButton.Location = new System.Drawing.Point(216, 93);
             this.setupButton.Name = "setupButton";
             this.setupButton.Size = new System.Drawing.Size(75, 75);
@@ -98,7 +97,7 @@
             // packageButton
             // 
             this.packageButton.AccessibleDescription = "Package a Windows app package. E.g. Appx, Msix, AppInstaller";
-            this.packageButton.Image = ((System.Drawing.Image)(resources.GetObject("packageButton.Image")));
+            this.packageButton.Image = global::DarwinWrap.UI.SharedResources.PackageButtonImage;
             this.packageButton.Location = new System.Drawing.Point(350, 93);
             this.packageButton.Name = "packageButton";
             this.packageButton.Size = new System.Drawing.Size(75, 75);
@@ -110,7 +109,7 @@
             // scriptButton
             // 
             this.scriptButton.AccessibleDescription = "Package Batch/Powershell scripts.";
-            this.scriptButton.Image = ((System.Drawing.Image)(resources.GetObject("scriptButton.Image")));
+            this.scriptButton.Image = global::DarwinWrap.UI.SharedResources.ScriptButtonImage;
             this.scriptButton.Location = new System.Drawing.Point(82, 244);
             this.scriptButton.Name = "scriptButton";
             this.scriptButton.Size = new System.Drawing.Size(75, 75);
@@ -122,7 +121,7 @@
             // registryButton
             // 
             this.registryButton.AccessibleDescription = "Package a registry file to be applied to the target.";
-            this.registryButton.Image = ((System.Drawing.Image)(resources.GetObject("registryButton.Image")));
+            this.registryButton.Image = global::DarwinWrap.UI.SharedResources.RegistryButtonImage;
             this.registryButton.Location = new System.Drawing.Point(216, 244);
             this.registryButton.Name = "registryButton";
             this.registryButton.Size = new System.Drawing.Size(75, 75);
@@ -134,7 +133,7 @@
             // certButton
             // 
             this.certButton.AccessibleDescription = "Package a certificate to be enrolled.";
-            this.certButton.Image = ((System.Drawing.Image)(resources.GetObject("certButton.Image")));
+            this.certButton.Image = global::DarwinWrap.UI.SharedResources.CertButtonImage;
             this.certButton.Location = new System.Drawing.Point(350, 244);
             this.certButton.Name = "certButton";
             this.certButton.Size = new System.Drawing.Size(75, 75);

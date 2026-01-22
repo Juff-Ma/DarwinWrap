@@ -63,9 +63,29 @@ namespace DarwinWrap.UI {
         /// <summary>
         ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
         /// </summary>
+        public static System.Drawing.Bitmap CertButtonImage {
+            get {
+                object obj = ResourceManager.GetObject("CertButtonImage", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
+        /// </summary>
         public static System.Drawing.Bitmap DarwinWrapImage {
             get {
                 object obj = ResourceManager.GetObject("DarwinWrapImage", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap FolderButtonImage {
+            get {
+                object obj = ResourceManager.GetObject("FolderButtonImage", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -77,6 +97,46 @@ namespace DarwinWrap.UI {
             get {
                 object obj = ResourceManager.GetObject("MainIcon", resourceCulture);
                 return ((System.Drawing.Icon)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap PackageButtonImage {
+            get {
+                object obj = ResourceManager.GetObject("PackageButtonImage", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap RegistryButtonImage {
+            get {
+                object obj = ResourceManager.GetObject("RegistryButtonImage", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap ScriptButtonImage {
+            get {
+                object obj = ResourceManager.GetObject("ScriptButtonImage", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap SetupButtonImage {
+            get {
+                object obj = ResourceManager.GetObject("SetupButtonImage", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
     }

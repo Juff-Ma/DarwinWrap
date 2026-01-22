@@ -118,12 +118,36 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="CertButtonImage" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Assets\ButtonIcons\cert.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+    <comment>Image for Cert button on StartPage</comment>
+  </data>
   <data name="DarwinWrapImage" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Assets\DarwinWrap-Medium.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
     <comment>Main Project Image</comment>
   </data>
+  <data name="FolderButtonImage" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Assets\ButtonIcons\folder.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+    <comment>Image for ZIP/Folder button on StartPage</comment>
+  </data>
   <data name="MainIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Assets\DarwinWrap.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
     <comment>Main App Icon</comment>
+  </data>
+  <data name="PackageButtonImage" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Assets\ButtonIcons\package.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+    <comment>Image for Package button on StartPage</comment>
+  </data>
+  <data name="RegistryButtonImage" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Assets\ButtonIcons\registry.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+    <comment>Image for Registry button on StartPage</comment>
+  </data>
+  <data name="ScriptButtonImage" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Assets\ButtonIcons\script.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+    <comment>Image for Script button on StartPage</comment>
+  </data>
+  <data name="SetupButtonImage" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Assets\ButtonIcons\setup.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+    <comment>Image for Setup button on StartPage</comment>
   </data>
 </root>

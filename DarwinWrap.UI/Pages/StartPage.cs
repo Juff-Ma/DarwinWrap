@@ -6,7 +6,6 @@ public partial class StartPage : Page
     {
         InitializeComponent();
 
-        // TODO: Make embedded button images not embedded but based on files
         InitTooltips();
     }
 
