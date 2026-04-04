@@ -1,26 +1,18 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
 	<PropertyGroup>
-		<OutputType>Exe</OutputType>
 		<TargetFramework>net48</TargetFramework>
 		<ImplicitUsings>enable</ImplicitUsings>
 		<Nullable>enable</Nullable>
 		<LangVersion>14</LangVersion>
 
-		<UseWindowsForms>true</UseWindowsForms>
-
-		<StartupObject>DarwinWrap.Entrypoint</StartupObject>
 		<PlatformTarget>AnyCPU</PlatformTarget>
 		<PreferNativeArm64>True</PreferNativeArm64>
-
-		<ApplicationIcon>..\Assets\DarwinWrap.ico</ApplicationIcon>
 	</PropertyGroup>
 
-  <ItemGroup>
-	<ProjectReference Include="..\DarwinWrap.Runtime\DarwinWrap.Runtime.csproj" />
-	<ProjectReference Include="..\DarwinWrap.Generators\DarwinWrap.Generators.csproj" />
-	<ProjectReference Include="..\DarwinWrap.UI\DarwinWrap.UI.csproj" />
-  </ItemGroup>
+	<ItemGroup>
+		<ProjectReference Include="..\DarwinWrap.Shared\DarwinWrap.Shared.csproj" />
+	</ItemGroup>
 
 	<ItemGroup>
 		<PackageReference Include="MinVer" Version="7.0.0">
@@ -31,16 +23,11 @@
 			<PrivateAssets>all</PrivateAssets>
 			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
 		</PackageReference>
-		<PackageReference Include="Spectre.Console.Cli" Version="0.55.0" />
-	</ItemGroup>
-
-	<ItemGroup>
-	  <Folder Include="Commands\" />
 	</ItemGroup>
 
 	<!--Build Info-->
 	<PropertyGroup>
-		<RootNamespace>DarwinWrap</RootNamespace>
+		<RootNamespace>DarwinWrap.Generators</RootNamespace>
 		<Title>$(RootNamespace)</Title>
 		<AssemblyName>$(RootNamespace)</AssemblyName>
 		<Authors>Julian Rossbach</Authors>

@@ -1,4 +1,5 @@
 ﻿using System.Reflection;
+using System.Runtime.InteropServices;
 
 namespace DarwinWrap.UI.Forms;
 
@@ -23,75 +24,68 @@ partial class AboutForm : Form
 
     #region AssemblyInfo
 
-    private string AssemblyTitle
-    {
-        get
-        {
-            object[] attributes = _assembly.GetCustomAttributes(typeof(AssemblyTitleAttribute), false);
-            if (attributes.Length > 0)
-            {
-                AssemblyTitleAttribute titleAttribute = (AssemblyTitleAttribute)attributes[0];
-                if (titleAttribute.Title != "")
-                {
-                    return titleAttribute.Title;
-                }
-            }
-            return Path.GetFileNameWithoutExtension(_assembly.CodeBase);
-        }
-    }
+    private string AssemblyTitle => _assembly.GetTitle();
 
-    private string AssemblyVersion => _assembly.GetName().Version.ToString();
+    private string AssemblyVersion => _assembly.GetVersion();
 
-    private string AssemblyDescription
-    {
-        get
-        {
-            object[] attributes = _assembly.GetCustomAttributes(typeof(AssemblyDescriptionAttribute), false);
-            if (attributes.Length == 0)
-            {
-                return "";
-            }
-            return ((AssemblyDescriptionAttribute)attributes[0]).Description;
-        }
-    }
+    private string AssemblyDescription => _assembly.GetDescription();
 
-    private string AssemblyProduct
-    {
-        get
-        {
-            object[] attributes = _assembly.GetCustomAttributes(typeof(AssemblyProductAttribute), false);
-            if (attributes.Length == 0)
-            {
-                return "";
-            }
-            return ((AssemblyProductAttribute)attributes[0]).Product;
-        }
-    }
+    private string AssemblyProduct => _assembly.GetProduct();
 
-    private string AssemblyCopyright
-    {
-        get
-        {
-            object[] attributes = _assembly.GetCustomAttributes(typeof(AssemblyCopyrightAttribute), false);
-            if (attributes.Length == 0)
-            {
-                return "";
-            }
-            return ((AssemblyCopyrightAttribute)attributes[0]).Copyright;
-        }
-    }
+    private string AssemblyCopyright => _assembly.GetCopyright();
 
-    private string AssemblyCompany
-    {
-        get
-        {
-            object[] attributes = _assembly.GetCustomAttributes(typeof(AssemblyCompanyAttribute), false);
-            if (attributes.Length == 0)
-            {
-                return "";
-            }
-            return ((AssemblyCompanyAttribute)attributes[0]).Company;
-        }
-    }
+    private string AssemblyCompany => _assembly.GetCompany();
     #endregion
+}
+
+public static class AttributeExtensions
+{
+    public static T? GetCustomAttribute<T>(this Assembly assembly) where T : Attribute
+    {
+        object[] attributes = assembly.GetCustomAttributes(typeof(T), false);
+        if (attributes.Length == 0)
+        {
+            return null;
+        }
+        return (T)attributes[0];
+    }
+
+    public static string GetVersion(this Assembly assembly)
+    {
+        return assembly.GetName().Version.ToString();
+    }
+
+    public static string GetTitle(this Assembly assembly)
+    {
+        var attribute = assembly.GetCustomAttribute<AssemblyTitleAttribute>();
+        if (attribute is null || string.IsNullOrWhiteSpace(attribute.Title))
+        {
+            return Path.GetFileNameWithoutExtension(assembly.CodeBase);
+        }
+        return attribute.Title;
+    }
+
+    public static string GetDescription(this Assembly assembly)
+    {
+        var attribute = assembly.GetCustomAttribute<AssemblyDescriptionAttribute>();
+        return attribute?.Description ?? string.Empty;
+    }
+
+    public static string GetProduct(this Assembly assembly)
+    {
+        var attribute = assembly.GetCustomAttribute<AssemblyProductAttribute>();
+        return attribute?.Product ?? string.Empty;
+    }
+
+    public static string GetCopyright(this Assembly assembly)
+    {
+        var attribute = assembly.GetCustomAttribute<AssemblyCopyrightAttribute>();
+        return attribute?.Copyright ?? string.Empty;
+    }
+
+    public static string GetCompany(this Assembly assembly)
+    {
+        var attribute = assembly.GetCustomAttribute<AssemblyCompanyAttribute>();
+        return attribute?.Company ?? string.Empty;
+    }
 }
