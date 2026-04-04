@@ -21,12 +21,14 @@ internal sealed class AppContext : ApplicationContext, IAppController
         //TODO: process args
         //TODO: literally everything
         MainForm = new WizardForm(this);
-        if (_consoleWindow is not null)
+        try
         {
-            MainForm.Show(_consoleWindow);
-            return;
+            MainForm.Show(_consoleWindow ?? throw new NullReferenceException());
         }
-        MainForm.Show();
+        catch
+        {
+            MainForm.Show();
+        }
     }
 
     /// <summary>
