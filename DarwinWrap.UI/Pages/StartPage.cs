@@ -17,5 +17,6 @@ public partial class StartPage : Page
         toolTip.SetToolTip(scriptButton, scriptButton.AccessibleDescription);
         toolTip.SetToolTip(registryButton, registryButton.AccessibleDescription);
         toolTip.SetToolTip(certButton, certButton.AccessibleDescription);
+        toolTip.SetToolTip(manifestButton, manifestButton.AccessibleDescription);
     }
 }

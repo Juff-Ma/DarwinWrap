@@ -38,35 +38,41 @@
             this.certButton = new System.Windows.Forms.Button();
             this.mainLabel = new System.Windows.Forms.Label();
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
+            this.manifestButton = new System.Windows.Forms.Button();
             this.tableLayoutPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // tableLayoutPanel
             // 
-            this.tableLayoutPanel.ColumnCount = 7;
+            this.tableLayoutPanel.ColumnCount = 9;
             this.tableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30F));
             this.tableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.tableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30F));
             this.tableLayoutPanel.Controls.Add(this.zipButton, 1, 1);
-            this.tableLayoutPanel.Controls.Add(this.setupButton, 3, 1);
-            this.tableLayoutPanel.Controls.Add(this.packageButton, 5, 1);
+            this.tableLayoutPanel.Controls.Add(this.setupButton, 4, 1);
+            this.tableLayoutPanel.Controls.Add(this.packageButton, 7, 1);
             this.tableLayoutPanel.Controls.Add(this.scriptButton, 1, 3);
-            this.tableLayoutPanel.Controls.Add(this.registryButton, 3, 3);
-            this.tableLayoutPanel.Controls.Add(this.certButton, 5, 3);
+            this.tableLayoutPanel.Controls.Add(this.registryButton, 4, 3);
+            this.tableLayoutPanel.Controls.Add(this.certButton, 7, 3);
             this.tableLayoutPanel.Controls.Add(this.mainLabel, 1, 0);
+            this.tableLayoutPanel.Controls.Add(this.manifestButton, 3, 5);
             this.tableLayoutPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel.Name = "tableLayoutPanel";
-            this.tableLayoutPanel.RowCount = 5;
-            this.tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 36F));
+            this.tableLayoutPanel.RowCount = 7;
+            this.tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 42F));
             this.tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 28F));
             this.tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 36F));
+            this.tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12F));
+            this.tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 18F));
             this.tableLayoutPanel.Size = new System.Drawing.Size(508, 412);
             this.tableLayoutPanel.TabIndex = 0;
             // 
@@ -74,7 +80,7 @@
             // 
             this.zipButton.AccessibleDescription = "Package any files you want. Includes premade configs for common apps.";
             this.zipButton.Image = global::DarwinWrap.UI.SharedResources.FolderButtonImage;
-            this.zipButton.Location = new System.Drawing.Point(82, 93);
+            this.zipButton.Location = new System.Drawing.Point(67, 92);
             this.zipButton.Name = "zipButton";
             this.zipButton.Size = new System.Drawing.Size(75, 75);
             this.zipButton.TabIndex = 0;
@@ -86,7 +92,7 @@
             // 
             this.setupButton.AccessibleDescription = "Package a common setup.exe.";
             this.setupButton.Image = global::DarwinWrap.UI.SharedResources.SetupButtonImage;
-            this.setupButton.Location = new System.Drawing.Point(216, 93);
+            this.setupButton.Location = new System.Drawing.Point(216, 92);
             this.setupButton.Name = "setupButton";
             this.setupButton.Size = new System.Drawing.Size(75, 75);
             this.setupButton.TabIndex = 1;
@@ -98,7 +104,7 @@
             // 
             this.packageButton.AccessibleDescription = "Package a Windows app package. E.g. Appx, Msix, AppInstaller";
             this.packageButton.Image = global::DarwinWrap.UI.SharedResources.PackageButtonImage;
-            this.packageButton.Location = new System.Drawing.Point(350, 93);
+            this.packageButton.Location = new System.Drawing.Point(365, 92);
             this.packageButton.Name = "packageButton";
             this.packageButton.Size = new System.Drawing.Size(75, 75);
             this.packageButton.TabIndex = 2;
@@ -110,7 +116,7 @@
             // 
             this.scriptButton.AccessibleDescription = "Package Batch/Powershell scripts.";
             this.scriptButton.Image = global::DarwinWrap.UI.SharedResources.ScriptButtonImage;
-            this.scriptButton.Location = new System.Drawing.Point(82, 244);
+            this.scriptButton.Location = new System.Drawing.Point(67, 232);
             this.scriptButton.Name = "scriptButton";
             this.scriptButton.Size = new System.Drawing.Size(75, 75);
             this.scriptButton.TabIndex = 3;
@@ -122,7 +128,7 @@
             // 
             this.registryButton.AccessibleDescription = "Package a registry file to be applied to the target.";
             this.registryButton.Image = global::DarwinWrap.UI.SharedResources.RegistryButtonImage;
-            this.registryButton.Location = new System.Drawing.Point(216, 244);
+            this.registryButton.Location = new System.Drawing.Point(216, 232);
             this.registryButton.Name = "registryButton";
             this.registryButton.Size = new System.Drawing.Size(75, 75);
             this.registryButton.TabIndex = 4;
@@ -134,7 +140,7 @@
             // 
             this.certButton.AccessibleDescription = "Package a certificate to be enrolled.";
             this.certButton.Image = global::DarwinWrap.UI.SharedResources.CertButtonImage;
-            this.certButton.Location = new System.Drawing.Point(350, 244);
+            this.certButton.Location = new System.Drawing.Point(365, 232);
             this.certButton.Name = "certButton";
             this.certButton.Size = new System.Drawing.Size(75, 75);
             this.certButton.TabIndex = 5;
@@ -145,15 +151,26 @@
             // mainLabel
             // 
             this.mainLabel.AutoSize = true;
-            this.tableLayoutPanel.SetColumnSpan(this.mainLabel, 5);
+            this.tableLayoutPanel.SetColumnSpan(this.mainLabel, 7);
             this.mainLabel.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.mainLabel.Location = new System.Drawing.Point(82, 57);
+            this.mainLabel.Location = new System.Drawing.Point(67, 56);
             this.mainLabel.Margin = new System.Windows.Forms.Padding(3, 0, 3, 20);
             this.mainLabel.Name = "mainLabel";
-            this.mainLabel.Size = new System.Drawing.Size(343, 13);
+            this.mainLabel.Size = new System.Drawing.Size(373, 13);
             this.mainLabel.TabIndex = 6;
             this.mainLabel.Text = "What kind of source do you want to package?";
             this.mainLabel.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // manifestButton
+            // 
+            this.manifestButton.AccessibleDescription = "Use an existing DarwinWrap manifest (.dwm) file";
+            this.tableLayoutPanel.SetColumnSpan(this.manifestButton, 3);
+            this.manifestButton.Location = new System.Drawing.Point(191, 338);
+            this.manifestButton.Name = "manifestButton";
+            this.manifestButton.Size = new System.Drawing.Size(125, 30);
+            this.manifestButton.TabIndex = 7;
+            this.manifestButton.Text = "Use existing manifest";
+            this.manifestButton.UseVisualStyleBackColor = true;
             // 
             // StartPage
             // 
@@ -178,5 +195,6 @@
         internal Button scriptButton;
         internal Button registryButton;
         internal Button certButton;
+        private Button manifestButton;
     }
 }
