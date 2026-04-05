@@ -7,6 +7,7 @@ public interface ISetupPackageSettings :
 {
     string? SetupFile { get; set; }
     string? SetupArguments { get; set; }
+    string? UninstallArguments { get; set; }
 
     /// <summary>
     /// The name of the registry key to grab infos from. If <see langword="null"/> or empty, no registry key will be used.
