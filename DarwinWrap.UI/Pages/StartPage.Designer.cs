@@ -37,8 +37,8 @@
             this.registryButton = new System.Windows.Forms.Button();
             this.certButton = new System.Windows.Forms.Button();
             this.mainLabel = new System.Windows.Forms.Label();
-            this.toolTip = new System.Windows.Forms.ToolTip(this.components);
             this.manifestButton = new System.Windows.Forms.Button();
+            this.toolTip = new System.Windows.Forms.ToolTip(this.components);
             this.tableLayoutPanel.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -102,7 +102,7 @@
             // 
             // packageButton
             // 
-            this.packageButton.AccessibleDescription = "Package a Windows app package. E.g. Appx, Msix, AppInstaller";
+            this.packageButton.AccessibleDescription = "Package a Windows app package. E.g. Appx, Msix, or corresponding bundle";
             this.packageButton.Image = global::DarwinWrap.UI.SharedResources.PackageButtonImage;
             this.packageButton.Location = new System.Drawing.Point(365, 92);
             this.packageButton.Name = "packageButton";
