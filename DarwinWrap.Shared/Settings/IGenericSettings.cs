@@ -23,17 +23,17 @@ public interface IGenericSettings
     /// <summary>
     /// Package architecture.
     /// </summary>
-    Architecture? Architecture { get; set; }
+    Architecture Architecture { get; set; }
 
     /// <summary>
     /// Whether the installation is machine wide.
     /// </summary>
-    bool? AdminInstall { get; set; }
+    bool AdminInstall { get; set; }
 
     /// <summary>
     /// Whether to use the basic UI or the default one.
     /// </summary>
-    bool? BasicUi { get; set; }
+    bool BasicUi { get; set; }
 
     /// <summary>
     /// Description of the package.
@@ -73,23 +73,21 @@ public interface IGenericSettings
     /// </summary>
     string? AboutUrl { get; set; }
 
-    /// <summary>
-    /// Don't show change button
-    /// </summary>
-    bool? ForbidChange { get; set; }
+    //bool ForbidChange { get; set; }
+    // Let's just always forbid change. We don't like change. Change is bad.
 
     /// <summary>
     /// Don't show repair button
     /// </summary>
-    bool? ForbidRepair { get; set; }
+    bool ForbidRepair { get; set; }
 
     /// <summary>
     /// Don't show uninstall button
     /// </summary>
-    bool? ForbidUninstall { get; set; }
+    bool ForbidUninstall { get; set; }
 
     /// <summary>
     /// Hide the program entry in the Start Menu and Add/Remove Programs.
     /// </summary>
-    bool? HideProgramEntry { get; set; }
+    bool HideProgramEntry { get; set; }
 }

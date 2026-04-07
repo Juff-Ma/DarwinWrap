@@ -9,7 +9,7 @@ public interface ICertificatePackageSettings : ISignableSettings
     /// <summary>
     /// This should support both DER and PEM formats.
     /// </summary>
-    string? CertFile { get; set; }
+    string CertFile { get; set; }
 
-    StoreName? StoreName { get; set; }
+    StoreName StoreName { get; set; }
 }

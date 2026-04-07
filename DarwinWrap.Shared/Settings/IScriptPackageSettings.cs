@@ -8,6 +8,6 @@ public interface IScriptPackageSettings :
     string? UninstallScriptFile { get; set; }
     string? UpdateScriptFile { get; set; }
 
-    bool? RunInstallBeforeUpdate { get; set; }
-    bool? RunUninstallBeforeUpdate { get; set; }
+    bool RunInstallBeforeUpdate { get; set; }
+    bool RunUninstallBeforeUpdate { get; set; }
 }

@@ -40,6 +40,8 @@ internal sealed class AppContext : ApplicationContext, IAppController
                     .Background(Color.White);
             }
             if (!settings.NoLogo) ctx!.PrintLogo();
+            if (settings.Verbose) ctx!.SetVerbose();
+
             return ctx!.StartGui(settings.MyConsole);
         }
     }
@@ -47,6 +49,10 @@ internal sealed class AppContext : ApplicationContext, IAppController
     public int StartGui(bool claimConsole)
     {
         var consoleWindow = claimConsole ? _consoleWindow : null;
+        if (claimConsole)
+        {
+            this.IfVerbose(() => _console.WriteLine("Claiming console as own.", DefaultStyle));
+        }
 
         MainForm = new WizardForm(this);
         try
@@ -55,6 +61,7 @@ internal sealed class AppContext : ApplicationContext, IAppController
         }
         catch
         {
+            this.IfVerbose(() => _console.WriteLine("Console not claimed.", DefaultStyle));
             MainForm.Show();
         }
 
@@ -116,6 +123,8 @@ internal sealed class AppContext : ApplicationContext, IAppController
 
     public Style DefaultStyle { get; set; } = Style.Plain;
 
+    public bool BeVerbose { get; private set; }
+
     public IAnsiConsole GetConsole()
     {
         return _console;
@@ -145,5 +154,10 @@ internal sealed class AppContext : ApplicationContext, IAppController
 
         var description = GetMainAssembly().GetDescription();
         _console.WriteLine($"{description}\n", logoStyle);
+    }
+
+    public void SetVerbose()
+    {
+        BeVerbose = true;
     }
 }

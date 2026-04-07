@@ -2,5 +2,5 @@
 
 public interface IRegistryPackageSettings : ISignableSettings
 {
-    string? RegistryFile { get; set; }
+    string RegistryFile { get; set; }
 }

@@ -27,7 +27,7 @@ public interface ISignableSettings : IGenericSettings
     /// Whether to sign all embedded files.
     /// Mostly useful for folder type since everything else this could lead to weird results.
     /// </summary>
-    bool? SignEmbeddedFiles { get; set; }
+    bool SignEmbeddedFiles { get; set; }
 
     /// <summary>
     /// Folder where signtool.exe is located. If not set, it will be looked for in the system PATH.

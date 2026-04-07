@@ -7,7 +7,11 @@ internal class GlobalSettings : CommandSettings
 {
     [CommandOption("-v|--verbose")]
     [Description("Enable verbose output")]
+#if DEBUG
+    [DefaultValue(true)]
+#else
     [DefaultValue(false)]
+#endif
     public bool Verbose { get; init; }
 
     [CommandOption("--nologo")]

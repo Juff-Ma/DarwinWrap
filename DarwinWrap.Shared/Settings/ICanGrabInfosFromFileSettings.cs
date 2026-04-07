@@ -9,10 +9,10 @@ public interface ICanGrabInfosFromFileSettings : IGenericSettings
     /// </summary>
     string? InfosFilePath { get; set; }
 
-    bool? FileGrabVisibleName { get; set; }
-    bool? FileGrabDescription { get; set; }
-    bool? FileGrabPublisher { get; set; }
-    bool? FileGrabVersion { get; set; }
-    bool? FileGrabArchitecture { get; set; }
-    bool? FileGrabIcon { get; set; }
+    bool FileGrabVisibleName { get; set; }
+    bool FileGrabDescription { get; set; }
+    bool FileGrabPublisher { get; set; }
+    bool FileGrabVersion { get; set; }
+    bool FileGrabArchitecture { get; set; }
+    bool FileGrabIcon { get; set; }
 }
