@@ -5,7 +5,7 @@ namespace DarwinWrap.Shared;
 
 public interface IAppController
 {
-    public void ExitApp();
+    public void ExitImmediately();
 
     public Assembly GetMainAssembly();
 

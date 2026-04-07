@@ -21,7 +21,7 @@ public partial class WizardForm : Form
 
     private void menuFileExit_Click(object sender, EventArgs e)
     {
-        _appController.ExitApp();
+        _appController.ExitImmediately();
     }
 
     private void menuHelpAbout_Click(object sender, EventArgs e)

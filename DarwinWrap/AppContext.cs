@@ -3,9 +3,11 @@ using DarwinWrap.UI.Forms;
 using Spectre.Console;
 using Spectre.Console.Cli;
 using System.ComponentModel;
+using System.Globalization;
 using System.Reflection;
 using System.Runtime.InteropServices;
 using DarwinWrap.Commands;
+using DarwinWrap.Commands.Creation;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.TextBox;
 using Color = Spectre.Console.Color;
 
@@ -49,6 +51,8 @@ internal sealed class AppContext : ApplicationContext, IAppController
 
     public int StartGui(bool claimConsole)
     {
+        _shouldExitAfterCommand = false;
+
         var consoleWindow = claimConsole ? _consoleWindow : null;
         if (claimConsole)
         {
@@ -95,14 +99,33 @@ internal sealed class AppContext : ApplicationContext, IAppController
             c.Settings.Console = _console;
             c.Settings.ApplicationName = GetMainAssembly().GetTitle();
             c.Settings.ApplicationVersion = GetMainAssembly().GetInformationalVersion();
+            c.Settings.Culture = CultureInfo.InvariantCulture;
 
             c.AddCommand<BuildCommand>("build")
                 .WithAlias("b")
-                .WithDescription("Builds an MSI file from an existing DarwinWrap manifest.");
+                .WithDescription("Builds an MSI file from an existing DarwinWrap manifest.")
+                .WithData(AsController());
+
+            c.AddBranch("create", b =>
+            {
+                b.SetDescription("Create a new manifest.");
+
+                b.AddCommand<DirectoryCommand>("directory")
+                    .WithAlias("dir")
+                    .WithAlias("d")
+                    .WithDescription("Create a directory/ZIP based MSI")
+                    .WithData(AsController());
+            }).WithAlias("c");
         });
 
-        app.Run(args);
+        Environment.ExitCode = app.Run(args);
+        if (_shouldExitAfterCommand) throw new PleaseExitException();
     }
+
+    // This is such a massive hack, but it works so eh
+#pragma warning disable RCS1194
+    private class PleaseExitException : Exception;
+#pragma warning restore RCS1194
 
     /// <summary>
     /// This gets the current console window handle
@@ -110,17 +133,27 @@ internal sealed class AppContext : ApplicationContext, IAppController
     [DllImport("kernel32.dll")]
     private static extern nint GetConsoleWindow();
 
-    public void ExitApp()
+    public IAppController AsController() => this;
+
+    public static void StartApp(string[] args)
+    {
+        Application.EnableVisualStyles();
+        try
+        {
+            Application.Run(new AppContext(args));
+        }
+        catch (PleaseExitException)
+        {
+            // Normal exit, do nothing
+        }
+    }
+
+    public void ExitImmediately()
     {
         Application.Exit();
     }
 
-    public static int StartApp(string[] args)
-    {
-        Application.EnableVisualStyles();
-        Application.Run(new AppContext(args));
-        return 0;
-    }
+    private bool _shouldExitAfterCommand = true;
 
     public Assembly GetMainAssembly()
     {

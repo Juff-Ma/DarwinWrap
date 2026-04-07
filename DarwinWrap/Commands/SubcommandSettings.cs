@@ -8,15 +8,15 @@ internal class SubcommandSettings : GlobalSettings
     [CommandOption("-o|--out-file")]
     [Description("Resulting file name")]
     [DefaultValue(null)]
-    public string? OutputFile { get; init; }
+    public string? OutputFile { get; set; }
 
     [CommandOption("-i|--input")]
-    [Description("Primary input file.")]
+    [Description("Primary input.")]
     [DefaultValue(null)]
-    public string? PrimaryInput { get; init; }
+    public string? PrimaryInput { get; set; }
 
     [CommandOption("-a|--aux-input")]
     [Description("Directory or zip file containing all required files.")]
     [DefaultValue(null)]
-    public string? AuxiliaryInput { get; init; }
+    public string? AuxiliaryInput { get; set; }
 }
