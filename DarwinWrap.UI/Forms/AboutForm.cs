@@ -26,7 +26,7 @@ partial class AboutForm : Form
 
     private string AssemblyTitle => _assembly.GetTitle();
 
-    private string AssemblyVersion => _assembly.GetVersion();
+    private string AssemblyVersion => _assembly.GetFileVersion();
 
     private string AssemblyDescription => _assembly.GetDescription();
 
@@ -50,9 +50,16 @@ public static class AttributeExtensions
         return (T)attributes[0];
     }
 
-    public static string GetVersion(this Assembly assembly)
+    public static string GetFileVersion(this Assembly assembly)
     {
-        return assembly.GetName().Version.ToString();
+        var attribute = assembly.GetCustomAttribute<AssemblyFileVersionAttribute>();
+        return attribute?.Version ?? string.Empty;
+    }
+
+    public static string GetInformationalVersion(this Assembly assembly)
+    {
+        var attribute = assembly.GetCustomAttribute<AssemblyInformationalVersionAttribute>();
+        return attribute?.InformationalVersion ?? string.Empty;
     }
 
     public static string GetTitle(this Assembly assembly)

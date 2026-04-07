@@ -5,6 +5,7 @@ using Spectre.Console.Cli;
 using System.ComponentModel;
 using System.Reflection;
 using System.Runtime.InteropServices;
+using DarwinWrap.Commands;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.TextBox;
 using Color = Spectre.Console.Color;
 
@@ -88,11 +89,16 @@ internal sealed class AppContext : ApplicationContext, IAppController
         CommandApp<MainCommand> app = new();
             
         app.WithData(this)
+           .WithDescription(GetMainAssembly().GetDescription())
            .Configure(c =>
         {
             c.Settings.Console = _console;
             c.Settings.ApplicationName = GetMainAssembly().GetTitle();
-            c.Settings.ApplicationVersion = GetMainAssembly().GetVersion();
+            c.Settings.ApplicationVersion = GetMainAssembly().GetInformationalVersion();
+
+            c.AddCommand<BuildCommand>("build")
+                .WithAlias("b")
+                .WithDescription("Builds an MSI file from an existing DarwinWrap manifest.");
         });
 
         app.Run(args);
