@@ -11,7 +11,7 @@
 		<PlatformTarget>AnyCPU</PlatformTarget>
 		<PreferNativeArm64>True</PreferNativeArm64>
 
-		<GenerateResourceUsePreserializedResources Condition="'$(Configuration)'=='Release'">true</GenerateResourceUsePreserializedResources>
+		<GenerateResourceUsePreserializedResources>true</GenerateResourceUsePreserializedResources>
 	</PropertyGroup>
 
 	<ItemGroup>
@@ -82,5 +82,10 @@
 			<FileVersion Condition="'$(Configuration)'=='Release'">$(MinVerMajor).$(MinVerMinor).$(MinVerPatch).$(GITHUB_RUN_NUMBER)</FileVersion>
 		</PropertyGroup>
 	</Target>
+
+	<PropertyGroup Condition="'$(Configuration)'=='Release'">
+		<DebugSymbols>False</DebugSymbols>
+		<DebugType>None</DebugType>
+	</PropertyGroup>
 
 </Project>
