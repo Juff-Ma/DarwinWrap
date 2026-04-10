@@ -81,6 +81,12 @@ internal class CreationSettings : SubcommandSettings, ISignableSettings
     [Description("The certificate to sign the application with. This can be a thumbprint, a file path or a subject name depending on the cert store type.")]
     [DefaultValue(null)]
     public string? SignCert { get; set; }
+
+    [CommandOption("--signing-password")]
+    [Description("The password for the signing certificate, if applicable.")]
+    [DefaultValue(null)]
+    public string? Password { get; set; }
+
     [CommandOption("--signing-time-url")]
     [Description("A URL to a timestamping server to use when signing.")]
     [DefaultValue(null)]

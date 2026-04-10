@@ -9,6 +9,11 @@ public interface ISignableSettings : IGenericSettings
     string? SignCert { get; set; }
 
     /// <summary>
+    /// The password for the code signing certificate, if applicable.
+    /// </summary>
+    string? Password { get; set; }
+
+    /// <summary>
     /// Gets or sets the URL used to retrieve the current time from an external source.
     /// </summary>
     string? TimeUrl { get; set; }

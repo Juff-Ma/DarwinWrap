@@ -104,7 +104,11 @@ internal sealed class AppContext : ApplicationContext, IAppController
             c.AddCommand<BuildCommand>("build")
                 .WithAlias("b")
                 .WithDescription("Builds an MSI file from an existing DarwinWrap manifest.")
-                .WithData(AsController());
+                .WithData(AsController())
+                .WithExample("build MyApp.dwm -i MySetup.exe".Split(' '))
+                .WithExample("build MyCert.dwm --nologo -i Cert.crt -o MyCert.msi".Split(' '))
+                .WithExample(("b MyComplexApp.dwm --verbose -i MyComplexSetup.exe " +
+                              "-a ExtraFiles\\ -o MyCool.msi").Split(' '));
 
             c.AddBranch("create", b =>
             {
@@ -114,14 +118,23 @@ internal sealed class AppContext : ApplicationContext, IAppController
                     .WithAlias("dir")
                     .WithAlias("d")
                     .WithDescription("Create a directory/ZIP based MSI")
-                    .WithData(AsController());
+                    .WithData(AsController())
+                    .WithExample("create", "directory", "-i", "MyFiles\\", "--name", "\"Hello World\"")
+                    .WithExample("create dir -v -a MyFiles\\ -b --admin-install --shortcut-file-name app.exe"
+                        .Split(' '));
 
                 b.AddCommand<SetupCommand>("setup")
                     .WithAlias("s")
                     .WithAlias("exe")
                     .WithAlias("e")
                     .WithDescription("Create a setup.exe based MSI")
-                    .WithData(AsController());
+                    .WithData(AsController())
+                    .WithExample("create setup -i MySetup.exe --id MyApp --arch arm64".Split(' '))
+                    .WithExample(("c exe -i Setup.exe -a ExtraFiles\\ --icon MyIcon.ico " +
+                                  "--file-grab-visible-name --file-grab-publisher --file-grab-version").Split(' '))
+                    .WithExample(("c s -i AppSetup.exe -b -v --setup-arguments /S --setup-registry-name app " +
+                                  "--admin-install --signing-cert Cert.pfx --signing-password VerySecurePassword " +
+                                  "--reg-grab-visible-name --reg-grab-description --hide-programs-entry").Split(' '));
 
                 b.AddCommand<PackageCommand>("package")
                     .WithAlias("pack")
@@ -133,7 +146,13 @@ internal sealed class AppContext : ApplicationContext, IAppController
                     .WithAlias("appx")
                     .WithAlias("a")
                     .WithDescription("Create an APPX/MSIX (or bundle) based MSI.")
-                    .WithData(AsController());
+                    .WithData(AsController())
+                    .WithExample(("create package -i MyPackage.appx --package-full-name My.App_1.0.0.0_x64 " +
+                                  "--package-grab-family-name").Split(' '))
+                    .WithExample(("create msix -i MyBundle.msixbundle -o Bundle.msi --license GPL.rtf " +
+                                  "--package-grab-full-name --package-grab-family-name --package-grab-id " +
+                                  "--package-grab-visible-name --package-grab-publisher --package-grab-version")
+                        .Split(' '));
 
                 b.AddCommand<ScriptCommand>("script")
                     .WithAlias("s")
@@ -141,19 +160,25 @@ internal sealed class AppContext : ApplicationContext, IAppController
                     .WithAlias("bat")
                     .WithAlias("b")
                     .WithDescription("Create a batch script based MSI.")
-                    .WithData(AsController());
+                    .WithData(AsController())
+                    .WithExample("create script -i Files\\ --install-script-name install.bat".Split(' '))
+                    .WithExample(("create bat -i Files\\ -v -b --basic-ui --arch x86 " +
+                                  "--install-script-name install.bat --uninstall-script-name uninstall.bat " +
+                                  "--update-script-name update.bat --run-install-before-update").Split(' '));
 
                 b.AddCommand<RegistryCommand>("registry")
                     .WithAlias("reg")
                     .WithAlias("r")
                     .WithDescription("Create a registry based MSI.")
-                    .WithData(AsController());
+                    .WithData(AsController())
+                    .WithExample("create reg --id da041329-4886-45c0-84e1-70a79a751a77 -i MyData.reg".Split(' '));
 
                 b.AddCommand<CertificateCommand>("certificate")
                     .WithAlias("cert")
                     .WithAlias("c")
                     .WithDescription("Create a certificate based MSI.")
-                    .WithData(AsController());
+                    .WithData(AsController())
+                    .WithExample("create cert -i CA.crt --admin-install --cert-store-name Root".Split(' '));
 
             }).WithAlias("c");
 
