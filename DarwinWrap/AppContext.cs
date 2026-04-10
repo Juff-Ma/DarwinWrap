@@ -123,6 +123,18 @@ internal sealed class AppContext : ApplicationContext, IAppController
                     .WithDescription("Create a setup.exe based MSI")
                     .WithData(AsController());
 
+                b.AddCommand<PackageCommand>("package")
+                    .WithAlias("pack")
+                    .WithAlias("p")
+                    .WithAlias("msixbundle")
+                    .WithAlias("msix")
+                    .WithAlias("m")
+                    .WithAlias("appxbundle")
+                    .WithAlias("appx")
+                    .WithAlias("a")
+                    .WithDescription("Create an APPX/MSIX (or bundle) based MSI.")
+                    .WithData(AsController());
+
             }).WithAlias("c");
         });
 

@@ -7,8 +7,8 @@ public interface IAppxPackageSettings : ISignableSettings
     /// Path to the MSIX, APPX, etc. file to be included in the package.
     /// </summary>
     string PackageFile { get; set; }
-    string PackageFullName { get; set; }
-    string PackageFamilyName { get; set; }
+    string? PackageFullName { get; set; }
+    string? PackageFamilyName { get; set; }
 
     // Can only be read from the package
     bool PackageGrabFullName { get; set; }
