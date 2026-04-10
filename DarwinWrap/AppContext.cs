@@ -143,6 +143,12 @@ internal sealed class AppContext : ApplicationContext, IAppController
                     .WithDescription("Create a batch script based MSI.")
                     .WithData(AsController());
 
+                b.AddCommand<RegistryCommand>("registry")
+                    .WithAlias("reg")
+                    .WithAlias("r")
+                    .WithDescription("Create a registry based MSI.")
+                    .WithData(AsController());
+
             }).WithAlias("c");
         });
 
