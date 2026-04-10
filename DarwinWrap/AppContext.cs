@@ -149,6 +149,12 @@ internal sealed class AppContext : ApplicationContext, IAppController
                     .WithDescription("Create a registry based MSI.")
                     .WithData(AsController());
 
+                b.AddCommand<CertificateCommand>("certificate")
+                    .WithAlias("cert")
+                    .WithAlias("c")
+                    .WithDescription("Create a certificate based MSI.")
+                    .WithData(AsController());
+
             }).WithAlias("c");
         });
 
