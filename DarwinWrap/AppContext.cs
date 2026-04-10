@@ -156,6 +156,11 @@ internal sealed class AppContext : ApplicationContext, IAppController
                     .WithData(AsController());
 
             }).WithAlias("c");
+
+#if DEBUG
+            c.PropagateExceptions();
+            c.ValidateExamples();
+#endif
         });
 
         Environment.ExitCode = app.Run(args);
