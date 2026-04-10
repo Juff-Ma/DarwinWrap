@@ -135,6 +135,14 @@ internal sealed class AppContext : ApplicationContext, IAppController
                     .WithDescription("Create an APPX/MSIX (or bundle) based MSI.")
                     .WithData(AsController());
 
+                b.AddCommand<ScriptCommand>("script")
+                    .WithAlias("s")
+                    .WithAlias("batch")
+                    .WithAlias("bat")
+                    .WithAlias("b")
+                    .WithDescription("Create a batch script based MSI.")
+                    .WithData(AsController());
+
             }).WithAlias("c");
         });
 
