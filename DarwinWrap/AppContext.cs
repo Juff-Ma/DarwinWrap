@@ -115,6 +115,14 @@ internal sealed class AppContext : ApplicationContext, IAppController
                     .WithAlias("d")
                     .WithDescription("Create a directory/ZIP based MSI")
                     .WithData(AsController());
+
+                b.AddCommand<SetupCommand>("setup")
+                    .WithAlias("s")
+                    .WithAlias("exe")
+                    .WithAlias("e")
+                    .WithDescription("Create a setup.exe based MSI")
+                    .WithData(AsController());
+
             }).WithAlias("c");
         });
 
