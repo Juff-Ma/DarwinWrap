@@ -8,7 +8,6 @@ using System.Reflection;
 using System.Runtime.InteropServices;
 using DarwinWrap.Commands;
 using DarwinWrap.Commands.Creation;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.TextBox;
 using Color = Spectre.Console.Color;
 
 namespace DarwinWrap;

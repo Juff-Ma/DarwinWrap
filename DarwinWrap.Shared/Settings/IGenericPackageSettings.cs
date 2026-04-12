@@ -1,6 +1,8 @@
-﻿namespace DarwinWrap.Shared.Settings;
+﻿using System.Diagnostics.CodeAnalysis;
 
-public interface IGenericSettings
+namespace DarwinWrap.Shared.Settings;
+
+public interface IGenericPackageSettings
 {
     /// <summary>
     /// The ID of the Msi package.

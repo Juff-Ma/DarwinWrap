@@ -1,6 +1,6 @@
 ﻿namespace DarwinWrap.Shared.Settings;
 
-public interface ISignableSettings : IGenericSettings
+public interface ISignableSettings : IGenericPackageSettings
 {
     /// <summary>
     /// The name of the code signing certificate to use.

@@ -1,6 +1,6 @@
 ﻿namespace DarwinWrap.Shared.Settings;
 
-public interface ICanGrabInfosFromFileSettings : IGenericSettings
+public interface ICanGrabInfosFromFileSettings : IGenericPackageSettings
 {
     /// <summary>
     /// Path to the file to grab infos from.
